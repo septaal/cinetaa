@@ -1,0 +1,1546 @@
+/* ======================================================
+   CINETAA V2
+   Created by Septa Al Kautsar
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =======================
+   RESET
+======================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#070B17;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =======================
+   VARIABLES
+======================= */
+
+:root{
+
+    --primary:#3B82F6;
+    --primary-light:#60A5FA;
+
+    --background:#070B17;
+    --surface:#111827;
+
+    --text:#D1D5DB;
+
+    --radius:20px;
+
+    --transition:.35s ease;
+
+}
+
+/* =======================
+   LANDING
+======================= */
+
+.landing{
+
+    position:relative;
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+    rgba(7,11,23,.65),
+    rgba(7,11,23,.85)
+    ),
+
+    url("images/landing-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+/* =======================
+   OVERLAY
+======================= */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(59,130,246,.15),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(96,165,250,.12),
+    transparent 30%);
+
+}
+
+/* =======================
+   CONTENT
+======================= */
+
+.landing-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    max-width:750px;
+
+    padding:20px;
+
+}
+
+/* =======================
+   TITLE
+======================= */
+
+.landing-content h1{
+
+    font-size:clamp(4rem,10vw,7rem);
+
+    letter-spacing:12px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    animation:title 1s ease;
+
+}
+
+/* =======================
+   DESCRIPTION
+======================= */
+
+.landing-content p{
+
+    color:var(--text);
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    margin-bottom:45px;
+
+    animation:fade .9s .2s both;
+
+}
+
+/* =======================
+   BUTTON
+======================= */
+
+.btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:15px 42px;
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    animation:fade .9s .4s both;
+
+}
+
+.btn:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 15px 40px rgba(59,130,246,.45);
+
+}
+
+/* =======================
+   ANIMATION
+======================= */
+
+@keyframes title{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media(max-width:768px){
+
+.landing-content h1{
+
+letter-spacing:6px;
+
+}
+
+.landing-content p{
+
+font-size:1rem;
+
+}
+
+.btn{
+
+padding:14px 35px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.landing-content h1{
+
+font-size:3rem;
+
+}
+
+.landing-content p{
+
+font-size:.95rem;
+
+}
+
+}
+/* =======================================
+   CHOOSE PAGE
+======================================= */
+
+.bodychoose{
+
+    background:#070B17;
+
+    min-height:100vh;
+
+    
+
+    padding:80px 30px;
+
+}
+
+.choose{
+
+    width:min(1200px,100%);
+    margin: auto;
+
+}
+
+.choose-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.choose-header h1{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    margin-bottom:15px;
+
+}
+
+.choose-header p{
+
+    color:var(--text);
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    height:600px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    transition:.45s;
+
+}
+
+.card img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(7,11,23,.96),
+        rgba(7,11,23,.35),
+        transparent
+    );
+
+}
+
+.card-content{
+
+    position:relative;
+
+    z-index:2;
+
+    padding:35px;
+
+    width:100%;
+
+}
+
+.category{
+
+    display:inline-block;
+
+    background:rgba(59,130,246,.18);
+
+    color:#8ec5ff;
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    font-size:.85rem;
+
+    margin-bottom:18px;
+
+}
+
+.card-content h2{
+
+    font-size:2.2rem;
+
+    margin-bottom:15px;
+
+}
+
+.card-content p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.card:hover .btn{
+
+    transform:translateY(-4px);
+
+}
+
+@media(max-width:900px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+height:500px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.bodychoose{
+
+padding:50px 20px;
+
+}
+
+.card{
+
+height:420px;
+
+}
+
+.card-content{
+
+padding:25px;
+
+}
+
+.card-content h2{
+
+font-size:1.8rem;
+
+}
+
+}
+/* ===================================
+   NAVBAR
+=================================== */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    padding:0 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(7,11,23,.65);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+
+}
+
+/* ==========================
+   HAMBURGER
+========================== */
+
+#menu-toggle{
+
+    display:none;
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    color:white;
+
+}
+
+.logo{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+
+}
+
+nav ul a{
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+nav ul a:hover,
+
+nav ul a.active{
+
+    color:var(--primary);
+
+}
+@media (max-width:768px){
+
+    nav{
+
+        padding:0 25px;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:80px;
+
+        left:0;
+
+        width:100%;
+
+        background:#070B17;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+        padding:30px 0;
+
+        transform:translateY(-150%);
+
+        transition:.4s ease;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    #menu-toggle:checked ~ .nav-links{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media (min-width:769px){
+
+    .nav-links{
+
+        display:flex;
+
+        gap:35px;
+
+        list-style:none;
+
+    }
+
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 8% 80px;
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.hero-pixar{
+
+    background:
+
+    linear-gradient(rgba(7,11,23,.75),
+    rgba(7,11,23,.9)),
+
+    url(images/banner/bannerpixar.jpg);
+
+}
+
+.hero-text{
+
+    max-width:650px;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    background:rgba(59,130,246,.18);
+
+    border-radius:999px;
+
+    color:#9dc8ff;
+
+    margin-bottom:20px;
+
+}
+
+.hero-text h1{
+
+    font-size:clamp(3rem,7vw,5.5rem);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero-text p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.section-title h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:10px;
+
+}
+
+.section-title p{
+
+    color:var(--text);
+
+}
+
+/* ===================================
+   MOVIE GRID
+=================================== */
+
+.movie-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+
+}
+
+.movie{
+
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    aspect-ratio:2/3;
+    
+    position: relative;
+
+}
+
+
+.movie img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.movie-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:25px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(7,11,23,.96)
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.movie:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.movie:hover .movie-overlay{
+
+    opacity:1;
+
+}
+
+.movie-rating{
+
+    color:#FFD54A;
+
+    font-size:.9rem;
+
+}
+
+.movie-overlay h3{
+
+    margin:10px 0 20px;
+
+}
+
+.view-btn{
+
+    background:var(--primary);
+
+    padding:12px;
+
+    text-align:center;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+}
+/* ==========================
+   HERO K-DRAMA
+========================== */
+
+.hero-drakor{
+
+    background:
+
+    linear-gradient(
+    rgba(7,11,23,.75),
+    rgba(7,11,23,.90)
+    ),
+
+    url("images/banner/bannerkdrama.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+    margin-top:120px;
+
+    background:#050912;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    padding:70px 0 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:80px;
+
+}
+
+.footer-brand{
+
+    max-width:450px;
+
+}
+
+.footer-brand h2{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.footer-brand h2 span{
+
+    color:var(--primary);
+
+}
+
+.footer-brand p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.footer-links h3{
+
+    margin-bottom:8px;
+
+}
+
+.footer-links a{
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+    transform:translateX(6px);
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    padding:22px;
+
+}
+
+.footer-bottom p{
+
+    color:#8B94A7;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================
+   FOOTER RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.footer-container{
+
+flex-direction:column;
+
+gap:40px;
+
+}
+
+.footer-links{
+
+width:100%;
+
+}
+
+.footer-bottom{
+
+padding:18px;
+
+}
+
+}
+/* ===================================
+   MOVIE DETAIL
+=================================== */
+
+.movie-detail{
+
+    width:min(1200px,92%);
+
+    margin:120px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+.movie-poster img{
+
+    width:100%;
+
+    border-radius:22px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+}
+
+.movie-tag{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    background:rgba(59,130,246,.15);
+
+    color:#8fc5ff;
+
+    border-radius:999px;
+
+    margin-bottom:20px;
+
+}
+
+.movie-info h1{
+
+    font-size:3rem;
+
+    margin-bottom:30px;
+
+}
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:18px;
+
+    margin-bottom:40px;
+
+}
+
+.info-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:20px;
+
+}
+
+.info-card h3{
+
+    font-size:.9rem;
+
+    color:#9CA3AF;
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    font-weight:600;
+
+}
+
+.synopsis{
+
+    margin-bottom:40px;
+
+}
+
+.synopsis h2{
+
+    margin-bottom:18px;
+
+}
+
+.synopsis p{
+
+    color:var(--text);
+
+    line-height:1.9;
+
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:900px){
+
+.movie-detail{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.movie-poster{
+
+max-width:340px;
+
+margin:auto;
+
+}
+
+.movie-info{
+
+text-align:center;
+
+}
+
+.info-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.movie-info h1{
+
+font-size:2.3rem;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.movie-detail{
+
+margin-top:100px;
+
+}
+
+}
+ /*==================================================
+   MOVIE HOVER
+================================================== */
+
+.movie{
+
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+
+}
+
+.movie:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 25px 60px rgba(59,130,246,.25);
+
+}
+
+.movie-overlay{
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.movie:hover .movie-overlay{
+
+    opacity:1;
+
+}
+
+.movie-rating{
+
+    transform:translateY(20px);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.movie h3{
+
+    transform:translateY(20px);
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.view-btn{
+
+    transform:translateY(20px);
+
+    opacity:0;
+
+    transition:.6s;
+
+}
+
+.movie:hover .movie-rating{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+.movie:hover h3{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+.movie:hover .view-btn{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+.view-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:48px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.view-btn:hover{
+
+    background:var(--primary-light);
+
+}
+
+/* ==================================================
+   CARD GLOW
+================================================== */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.08);
+
+    pointer-events:none;
+
+}
+
+.card:hover{
+
+    box-shadow:
+
+    0 25px 70px rgba(59,130,246,.28);
+
+}
+
+/* ==================================================
+   FADE UP
+================================================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ==================================================
+   SELECTION
+================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width:1200px){
+
+.hero{
+
+padding:120px 6% 80px;
+
+}
+
+.movies{
+
+width:94%;
+
+}
+
+}
+
+@media (max-width:992px){
+
+nav{
+
+padding:0 5%;
+
+}
+
+.hero{
+
+text-align:center;
+
+justify-content:center;
+
+}
+
+.hero-text{
+
+max-width:700px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+nav{
+
+height:70px;
+
+}
+
+nav ul{
+
+gap:18px;
+
+}
+
+.hero{
+
+min-height:75vh;
+
+padding:110px 25px 60px;
+
+}
+
+.hero-text h1{
+
+font-size:3rem;
+
+}
+
+.movie-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.movie-detail{
+
+padding:0 20px;
+
+}
+
+}
+
+@media (max-width:576px){
+
+.movie-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-text h1{
+
+font-size:2.4rem;
+
+}
+
+.hero-text p{
+
+font-size:.95rem;
+
+}
+
+.logo{
+
+font-size:1.5rem;
+
+}
+
+
+
+}
+
+.btn{
+
+padding:13px 30px;
+
+font-size:.9rem;
+
+}
+
+footer{
+
+padding:40px 20px;
+
+}
+
+}
+
+@media (max-width:380px){
+
+.hero-text h1{
+
+font-size:2rem;
+
+}
+
+.section-title h2{
+
+font-size:2rem;
+
+}
+
+}
+a{
+    text-decoration:none;
+    color: white;
+}
