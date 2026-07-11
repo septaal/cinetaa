@@ -1524,7 +1524,9 @@ font-size:1.5rem;
 
     border-radius:999px;
     
-    height: 30px
+    height: auto;
+
+   padding: 4px 8px;
 
 }
 
