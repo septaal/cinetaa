@@ -1504,6 +1504,29 @@ font-size:.95rem;
 font-size:1.5rem;
 
 }
+   .movie-overlay h3{
+
+    font-size:.95rem;
+
+}
+
+.movie-rating{
+
+    font-size:.75rem;
+
+}
+
+.view-btn{
+
+    
+
+    font-size:.6rem;
+
+    border-radius:999px;
+    
+    height: 30px
+
+}
 
 
 
